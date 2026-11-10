@@ -67,7 +67,7 @@ export const site = {
 
   // URL del repositorio con el código del sitio (por ejemplo, en GitHub).
   // Si lo dejás vacío (""), el enlace "Ver el código" no se muestra.
-  repositorio: "",
+  repositorio: "https://github.com/micamicmacher/portfolio-micaela",
 
   // ---------------------------------------------------------------------------
   // Menú
