@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio de Micaela Nuñez
 
-## Getting Started
+Sitio profesional de una sola página de **Micaela Nuñez**, asesora comercial de Mar del Plata, Argentina. Muestra en pocos segundos qué hago (ventas, atención al cliente y redes sociales orientadas a ventas), mi experiencia y cómo contactarme. Estoy disponible para trabajo remoto.
 
-First, run the development server:
+## Cómo lo hice
+
+Construí este sitio con **Claude Code**, una herramienta de inteligencia artificial. No soy programadora: no escribí el código a mano. Describí en lenguaje natural lo que quería (las secciones, los textos, el estilo, qué tenía que entender un reclutador en los primeros segundos) y fui revisando, pidiendo cambios y ajustando cada versión hasta que quedó como lo imaginaba. A esta forma de trabajar se la conoce como *vibe coding*.
+
+Por dentro usa Next.js, TypeScript y Tailwind CSS. No tiene base de datos ni servidor propio, así que se puede publicar gratis en Vercel.
+
+## Cómo editar los textos
+
+**Todo el contenido está en un solo archivo: [`src/content/site.ts`](src/content/site.ts).** Para cambiar un texto, un dato de contacto o un puesto de trabajo no hace falta tocar nada más.
+
+1. Abrí `src/content/site.ts` con cualquier editor de texto (por ejemplo, Visual Studio Code).
+2. Buscá el texto que querés cambiar. Está ordenado por sección, en el mismo orden que el sitio: Inicio, Qué hago, Caso destacado, Experiencia, Cómo hice este sitio y Contacto.
+3. Cambiá solo lo que está **entre comillas**. Dejá las comillas, las comas y los corchetes como están.
+4. Guardá el archivo. Si el sitio está abierto con `npm run dev`, se actualiza solo.
+
+Algunos campos son opcionales: si los dejás vacíos (`""` o `[]`), esa parte no se muestra.
+
+- `repositorio`: el enlace "Ver el código".
+- `lockas.metricas`: números del emprendimiento. Completalo solo con datos reales.
+- `url`: la dirección pública del sitio, si usás un dominio propio. En Vercel no hace falta.
+
+### Foto y CV
+
+- **Foto:** copiala a `public/foto-micaela.jpg`. Si no está, se muestran las iniciales "MN". Conviene que sea cuadrada, porque se recorta en círculo.
+- **CV:** copiá el PDF a `public/CV-Micaela-Nunez.pdf`. Si no está, el botón "Descargar CV" no aparece.
+
+Los nombres tienen que ser exactos, respetando mayúsculas.
+
+## Verlo en tu computadora
+
+Necesitás tener instalado [Node.js](https://nodejs.org) (versión 20 o más nueva).
 
 ```bash
+npm install     # solo la primera vez
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Después abrí http://localhost:3000 en el navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para revisar que todo esté bien antes de publicar:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Publicarlo
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Importá este repositorio en https://vercel.com/new. Vercel detecta que es un proyecto Next.js y no hace falta configurar nada.
